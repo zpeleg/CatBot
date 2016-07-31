@@ -1,9 +1,10 @@
 import * as request from 'request';
 import {parseString}  from 'xml2js';
+import * as stream from 'stream';
 
 export enum IsMoving { Moving, Static };
 export interface GotCat {
-    (catUrl: string): void;
+    (cat: string): void;
 }
 export class CatApiRetriever {
     getCat(moving: IsMoving, callback: GotCat) {
@@ -21,11 +22,10 @@ export class CatApiRetriever {
                 if (error) {
                     throw error;
                 }
-                parseString(body,function(err,res){
+                parseString(body, function (err, res) {
                     var caturl = res.response.data[0].images[0].image[0].url[0];
                     callback(caturl);
                 })
-
             });
     }
 }
