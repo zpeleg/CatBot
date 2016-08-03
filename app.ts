@@ -9,7 +9,7 @@ catapi.getCat(IsMoving.Static, function (b) {
 var token = "255648552:AAGPLY09tq5P3ymtSqL4_IYky82bcXjk0Do";
 var bot = new TelegramBot(token, { polling: true });
 
-bot.onText(/\/cat$/, function (msg) {
+bot.onText(/\/cat(@DailyCatBot)?$/, function (msg) {
     console.log('start send photo');
     var chatId = msg.chat.id;
     var catapi = new CatApiRetriever();
@@ -19,7 +19,7 @@ bot.onText(/\/cat$/, function (msg) {
         console.log('sent photo');
     });
 });
-bot.onText(/\/catgif/, function (msg) {
+bot.onText(/\/catgif(@DailyCatBot)?$/, function (msg) {
     console.log('start send gif');
     var chatId = msg.chat.id;
     var catapi = new CatApiRetriever();
