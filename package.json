@@ -1,0 +1,33 @@
+{
+  "name": "zpeleg-catbot",
+  "version": "1.0.0",
+  "description": "A bot for cats",
+  "main": "bin/app.js",
+  "bin": {
+    "zpeleg.catbot": "app.js"
+  },
+  "dependencies": {
+    "async-file": "^2.0.0",
+    "node-telegram-bot-api": "^0.23.3",
+    "request": "^2.74.0",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zpeleg/CatBot.git"
+  },
+  "keywords": [
+    "cat",
+    "telegram"
+  ],
+  "author": "zpeleg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zpeleg/CatBot/issues"
+  },
+  "homepage": "https://github.com/zpeleg/CatBot#readme"
+}
