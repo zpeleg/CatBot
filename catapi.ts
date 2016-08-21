@@ -7,11 +7,14 @@ export interface GotCat {
     (cat: string): void;
 }
 export class CatApiRetriever {
+    constructor(private apikey: string) {
+    }
     getCat(moving: IsMoving, callback: GotCat) {
         var options: request.Options = {
             baseUrl: 'http://thecatapi.com',
             uri: 'api/images/get',
             qs: {
+                api_key: this.apikey,
                 format: 'xml',
                 results_per_page: 1,
                 type: moving == IsMoving.Moving ? 'gif' : 'png,jpg'
